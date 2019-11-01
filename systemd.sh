@@ -3,7 +3,6 @@ sudo apt-get -y install python3-pip
 sudo apt-get -y install virtualenv
 
 
-cd ./character_sheets
 
 # install the service script
 sudo cp flask-app.service /etc/systemd/system/
