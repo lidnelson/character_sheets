@@ -1,0 +1,146 @@
+{% extends 'layout.html' %}
+{% block page_content %}
+<div>
+	{% for file in file %}
+	<h2 align="center">{{ file.character_first_name }} {{ file.character_last_name }}</h2>
+	<p align='center'>File: {{ file.file_name }} <span align="center" style='color:darkblue'><a href='/account/file/{{ file.id }}/edit_file_name'>Edit File</a></span></p>
+	<p align='center'>{{ file.character_description }}</p>
+
+	
+</div>
+
+<div align="center">
+	<span style='color:red'><a href='/account/file/{{ file.id }}/delete'>Delete Character</a></span>
+	<span style='color:darkblue'><a href= '/account/file/{{ file.id }}/edit_character'>Edit Character</a></span>
+</div>
+<div>
+	
+
+	<h3 align="center">Appearence</h3>
+	<p>Eye colour: {{ file1.eye_colour }}</p>
+	<p>{{ file.character_first_name }} {{ file.character_last_name }} has scars (True or False):  ............{{ file1.scars }}............ </p>
+	
+	<span style='color:darkblue'><a href='/account/file/{{ file.id }}/scars_form'>Add scars</a></span>
+	
+	<div align="center">
+		{% for scar in scars %}
+		<h4>{{ scar.scars_what }}</h4>
+		<p>Located: {{ scar.scars_where }}</p>
+		<p>History: {{ scar.scars_why }}</p>
+		<a style='color:red' href ='/account/file/{{ file.id }}/scar/{{ scar.id }}/delete'>delete</a>
+		{% endfor %}
+	</div>
+
+	<p>{{ file.character_first_name }} {{ file.character_last_name }} has tattoos (True or False):  .........{{ file1.tattoos }}..........</p>
+	<span style='color:darkblue'><a href='/account/file/{{ file.id }}/tattoos_form'>Add tattoos</a></span>
+
+	<div align="center">
+		{% for tattoo in tattoos %}
+		<h4>{{ tattoo.tattoos_what }}</h4>
+		<p>Located: {{ tattoo.tattoos_where }}</p>
+		<a style='color:red' href ='/account/file/{{ file.id }}/tattoo/{{ tattoo.id }}/delete'>delete</a>
+		{% endfor %}
+	</div>
+
+
+
+	<h3 align="center">Personality</h3>
+	<p>Pet-peeves : .......{{ file1.pet_peeves }}.......</p>
+	<p>Hobbies : ......{{ file1.hobbies }}.......</p>
+	<p>Alignment : .......{{ file1.alignment }}.......</p>
+	<p style='color:{{ a.colour }}'>{{ file1.alignment }} - {{ a.description }}</p>
+	<p>Accent : ......{{ file1.accent }}......</p>
+	<p>{{ file.character_first_name }} {{ file.character_last_name }} is passionate about ....{{ file1.passionate }}....</p>
+	<p>{{ file.character_first_name }} {{ file.character_last_name }} is a(n) ... {{ file1.earlybird_nightowl }}</p>
+	<p>{{ file.character_first_name }} {{ file.character_last_name }} favourite meal is .......{{ file1.favourite_meal }}.......</p>
+	<p>{{ file.character_first_name }} {{ file.character_last_name }}'s main goal is to ........{{ file1.goals }}........</p>
+	<p>In thier own time {{ file.character_first_name }} {{ file.character_last_name }} likes to listen to .......{{ file1.music_genre }}....... music </p>
+	<p>{{ file.character_first_name }} {{ file.character_last_name }} is a cat person (True or False):	..........{{ file1.cat_person }}...........
+	</p>
+	<p>{{ file.character_first_name }} {{ file.character_last_name }} is a dog person (True or False):..........{{ file1.dog_person }}.........
+	</p>
+	<p>{{ file.character_first_name }} {{ file.character_last_name }}'s ideas about a romantic relationship are ......... {{ file1.romantic_relationship_ideals }}.........</p>
+	<p>Does {{ file.character_first_name }} {{ file.character_last_name }} like to celebrate thier birthday? ..........{{ file1.partial_birthday_celebration }}.........</p>
+	<p> Does {{ file.character_first_name }} {{ file.character_last_name }} find it easy to apologise? ...{{ file1.easy_appologiser }}...</p>
+	<p> Was {{ file.character_first_name }} {{ file.character_last_name }} bullied in school? .........{{ file1.bullied }}......... </p>
+	<p> {{ file.character_first_name }} {{ file.character_last_name }} is {{ file1.smarts }}</p>
+	<p> {{ file.character_first_name }} {{ file.character_last_name }} is from .........{{ file1.country }}..........</p>
+	<p>{{ file.character_first_name }} {{ file.character_last_name }} is a book worm (True or False):  ...........{{ file1.book_worm }}...........</p>
+	
+	<p> {{ file.character_first_name }} {{ file.character_last_name }} has a fear of .........{{ file1.fears }}........</p>
+
+
+
+	<h3 align="center">{{ file.character_first_name }} {{ file.character_last_name }}'s Details</h3>
+	<p>You the Author know where {{ file.character_first_name }} {{ file.character_last_name }} lives and what the address is (True or False): .........{{ file1.address }}..........</p>	
+	<span align="right" style='color:darkblue'><a href='/account/file/{{ file.id }}/address_form'>Add Address</a></span>
+
+	<div align="center">
+		<p>{{ address.address_1 }}</p>
+		<p>{{ address.address_2 }}</p>
+		<p>{{ address.town }}</p>
+		<p>{{ address.county }}</p>
+		<p>{{ address.country }}</p>
+		<p>{{ address.postcode_zipcode }}</p>
+		<a style='color:darkblue' href ='/account/file/{{ file.id }}/address/edit'>edit</a>
+	</div>
+
+	<p> {{ file.character_first_name }} {{ file.character_last_name }} identifies as .............{{ file1.gender }}..............</p>
+	<p>{{ file.character_first_name }} {{ file.character_last_name }}'s birthday is .........{{ file1.birthday }}.........</p>
+	<p>Does {{ file.character_first_name }} {{ file.character_last_name }} know thier mother? .........{{ file1.mother }}........</p>
+	<p>Does {{ file.character_first_name }} {{ file.character_last_name }} know thier father? ..........{{ file1.father }}.........</p>
+	<p>Do you have any relationship details you'd like to add for {{ file.character_first_name }} {{ file.character_last_name }}? ........{{ file1.relationships }}........</p>
+	<span align="right" style='color:darkblue'><a href='/account/file/{{ file.id }}/relationship_form'>Add Relationship</a></span>
+
+
+
+
+	
+	<h3 align="center">Abilities</h3>
+
+	<p>{{ file.character_first_name }} {{ file.character_last_name }} has {{ file1.skills_number }} skills </p>
+	<span align="right" style='color:darkblue'><a href='/account/file/{{ file.id }}/skill_form'>Add skills</a></span>
+
+	<div align="center">
+		{% for skill in skills %}
+		<h4>{{ skill.skills_what }}</h4>
+		<span>How they use the skill: {{ skill.skills_used }}</span>
+		<a style='color:red' href ='/account/file/{{ file.id }}/skill/{{ skill.id }}/delete'>delete</a>
+		{% endfor %}
+	</div>
+
+
+	<p>{{ file.character_first_name }} {{ file.character_last_name }} has magical abilities (True or False):  ............{{ file1.magical_abilities }}............
+	</p>
+	<span align="right" style='color:darkblue'><a href='/account/file/{{ file.id }}/magical_abilities_form'>Add Magical Ability</a></span>
+	
+	<div align="center">
+		{% for magic in magical %}
+		<h4>Ability: {{ magic.MA_name }}</h4>
+		<p>How the ability is used: </p>
+		<p>{{ magic.MA_used }}</p>
+		<p>Flaws: {{ magic.flaws }}</p>
+		<p>Limitations: {{ magic.limitations }}</p>
+		<p>Price for using ability:</p>
+		<a style='color:red' href ='/account/file/{{ file.id }}/magical_ability/{{ magic.id }}/delete'>delete</a>
+		{% endfor %}
+	</div>
+
+	<p>{{ file.character_first_name }} {{ file.character_last_name }} needs to improve on ..........{{ file1.improvements }}...........</p>
+
+	<h3>Relationships</h3><span align="right" style='color:darkblue'><a href='/account/file/{{ file.id }}/relationship_form'>Add Relationship</a></span>
+
+	<div align="center">
+		{% for relationship in relationships %}
+		<h4>{{ relationship.first_name }} {{ relationship.last_name}} </h4>
+		<p>Type:  {{ relationship.relationship_type }}</p>
+		<p>Age:  {{ relationship.age }}</p>
+		<p>Length of relationship:  {{ relationship.length }}</p>
+		<p>Identifies As:  {{ relationship.gender }}</p>
+		<a style='color:red' href ='/account/file/{{ file.id }}/relationship/{{ relationship.id }}/delete'>delete</a>
+		{% endfor %}
+	</div>
+
+	{% endfor %}
+</div>
+{% endblock %}
