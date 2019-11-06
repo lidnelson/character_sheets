@@ -56,6 +56,8 @@ There are three different ways run this application Local, SystemD, and Docker.
     
 ### Docker
 In the respisitory **personalproject/character_sheet** 
+Before starting this make sure that docker is installed. 
+
 1. Build the docker image naming it whatever you like
 2. Use command line changing the inforamtion where nessasary (inside the "{{ }}")
 
