@@ -50,4 +50,15 @@ In the respisitory **personalproject/character_sheet**
 Example:
 "docker run -d -p 5000:5000 --name charasheet charasheet"
 3. Navigate to http://{{ External IP address }}:{{No.}}/  
-## Building the App
+
+## Building the App in Jenkins
+1. In jenkins create a New Item, making the project type a pipeline, name it whatever you'd like
+2. In the Build Triggers section tick the box "GitHub hoot trigger for GITScm polling"
+3. Scroll down to pipleine section. Click on the drop down next to 'Definition' and select 'Pipeline script from SCM'
+4. SCM should e selected as Git
+5. the Respiritory URL should be the link to this respiritory
+6. In Script Pathe type in 'Jenkinsfile'
+7. Click 'save'
+8. Click Build now 
+9. Navigate to http://{{ External IP address }}:8888/
+
