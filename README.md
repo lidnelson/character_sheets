@@ -45,7 +45,9 @@ There are three different ways run this application Local, SystemD, and Docker.
         flask run
 
 3. Navigate to http://{{ External IP address }}:5000/  
-   (Where the External IP address is the gcps External IP address)
+   
+(Where the External IP address is the gcps External IP address)
+
 *Remember when creating the VM in gcp to tick both the HTTP and HTTPS traffic*
 
 ### SystemD
