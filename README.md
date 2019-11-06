@@ -9,31 +9,43 @@ Make sure you are in the character_sheets respiritory
         sudo apt-get install python3-pip
 
         pip3 install -r requirements.txt
+        sudo pip3 install pymysql
 
 ## Running the Application
-There are three different ways run this application with help from files in the this repository 
+There are three different ways run this application Local, SystemD, and Docker. 
 
 
-### Local 
-In a virtual box 
+### Local
+#### Using python3
+1. Make sure you're in the character_sheets directory
+2. Use the command line
+
+        python3 run.py
+        
+#### Using flask
 1. Change directory into structure in the terminal
     
         . /venv/bin/activate
     
+##### Using a virtual box
 2. Change directory back to character_sheet
 
         export FLASK_APP=run.py
         export FLASK_ENV=development
         flask run
-
-#### Using a virtual box
     
 3. Navigate to http://localhost:5000/
 
-#### Using google cloud platform 
+##### Using google cloud platform 
+2. Change directory back to character_sheet
+
+        export FLASK_APP=run.py
+        export FLASK_ENV=production
+        export FLASK_RUN_HOST='0.0.0.0'
+        flask run
 
 3. Navigate to http://{{ External IP address }}:5000/  
-    
+   (Where the External IP address is the gcps External IP address)
 *Remember when creating the VM in gcp to tick both the HTTP and HTTPS traffic*
 
 ### SystemD
